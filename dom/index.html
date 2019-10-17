@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            border: 0;
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+        ul {
+            padding: 20px;
+        }
+        li {
+            padding: 5px;
+
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Uso de DOM -->
+    <h1 id="ejemplo">Hola</h1>
+    <div id="container">
+
+    </div>
+
+    <script>
+        // console.log(document.getElementById('ejemplo'))
+    
+        // let ele = document.querySelector('h1#ejemplo')
+        // console.log(ele.style)
+        // ele.style.color = "red"
+        // ele.innerHTML = "Hola como estas?"
+        // ele.setAttribute('algo' , 'jejeje');
+
+        let titulo1 = document.querySelector('h1#ejemplo')
+        let button = document.createElement('button')
+        button.innerHTML ='Click me'
+        titulo1.appendChild(button)
+
+        let contenedor = document.getElementById('contenedor')
+        // for(let i = 0; i < 10 ; i++) {
+        //     let h1 = document.createElement('h1')
+        //     h1.innerHTML = i + 1 
+        //     contenedor.appendChild(h1)
+        // }
+
+
+        let usuarios = [
+                { nombre: "Marco", apellido: "García", edad: 21},
+                { nombre: "Cata", apellido: "Garcia", edad: 21},
+                { nombre: "Nerio", apellido: "Garcia", edad: 21},
+                { nombre: "Chio", apellido: "Garcia", edad: 21},
+                { nombre: "José", apellido: "Garcia", edad: 21},
+                { nombre: "Dani", apellido: "Garcia", edad: 21},
+                { nombre: "Ynna", apellido: "Garcia", edad: 21},
+                { nombre: "Estefania", apellido: "Garcia", edad: 21}
+            ]
+
+        let lista = document.createElement('ul')
+        for(let i = 0 ; i < usuarios.length; i++){
+            let item = document.createElement('li')
+            item.innerHTML = usuarios[i];
+            lista.appendChild(item)
+        }
+        contenedor.appendChild(lista)
+        
+    
+        const nombres = ['Marco','Estefania','Nerio','José','Ynna','Adan','Daniela','Rocio']
+
+        function agregarExclamacion () { 
+            return '!';
+        }
+
+        for(let i = 0; i < nombres.length; i++) {
+            console.log(nombres[i] + agregarExclamacion());
+        }
+
+        
+    </script>
+</body>
+</html>
